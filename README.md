@@ -3,7 +3,8 @@
 
 # 準備材料
 * ESP32 x 1
-* ![alt ESP32](https://github.com/channel2007/SNESPlug/blob/master/image/img02.png "ESP32")
+
+![alt ESP32](https://github.com/channel2007/SNESPlug/blob/master/image/img02.png "ESP32")
 
 * 超任搖桿 x 1
 * ![alt SNES](https://github.com/channel2007/SNESPlug/blob/master/image/img03.png "SNES")
