@@ -1,6 +1,9 @@
 # 超任搖桿藍牙轉接器
 ![alt ESP32](https://github.com/channel2007/SNESPlug/blob/master/image/img01.png "ESP32")
 
+# 前言
+自己動手作超任搖桿藍牙轉接器
+
 # 準備材料
 * ESP32 x 1
 
@@ -16,6 +19,9 @@
 
 # 接線圖
 ![alt wiring](https://github.com/channel2007/SNESPlug/blob/master/image/img05.jpeg "wiring")
+
+# 寫入韌體
+開啟SNESPlug.ino檔案將其燒錄進ESP32內
 
 # 參考資料
 * [ESP32-BLE-Gamepad](https://github.com/lemmingDev/ESP32-BLE-Gamepad)
