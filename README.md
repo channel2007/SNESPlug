@@ -12,7 +12,7 @@
 * ![alt SNES](https://github.com/channel2007/SNESPlug/blob/master/image/img04.png "SNES")
 
 # 接線圖
-* ![alt wiring](https://github.com/channel2007/SNESPlug/blob/master/image/img05.jpeg "wiring")
+![alt wiring](https://github.com/channel2007/SNESPlug/blob/master/image/img05.jpeg "wiring")
 
 # 參考資料
 * [ESP32-BLE-Gamepad](https://github.com/lemmingDev/ESP32-BLE-Gamepad)
