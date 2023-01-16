@@ -23,6 +23,9 @@
 # 寫入韌體
 開啟SNESPlug.ino檔案將其燒錄進ESP32內
 
+# 教學文章
+* [【DIY】自己動手作超任搖桿藍牙轉接器](https://medium.com/@uupgrade/diy-%E8%87%AA%E5%B7%B1%E5%8B%95%E6%89%8B%E4%BD%9C%E8%B6%85%E4%BB%BB%E6%90%96%E6%A1%BF%E8%97%8D%E7%89%99%E8%BD%89%E6%8E%A5%E5%99%A8-26511038d2a2)
+
 # 參考資料
 * [ESP32-BLE-Gamepad](https://github.com/lemmingDev/ESP32-BLE-Gamepad)
 * [Arduino Gamepads](https://bitluni.net/gamepad)
