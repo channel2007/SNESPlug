@@ -72,6 +72,33 @@ void loop()
     }else{
       bleGamepad.release(BUTTON_8);
     }
+
+    if(controllers.down(0, GameControllers::UP)){        
+      //Serial.println("UP");
+      bleGamepad.press(BUTTON_3);
+    }else{
+      bleGamepad.release(BUTTON_3);
+    }
+    if(controllers.down(0, GameControllers::DOWN)){        
+      //Serial.println("DOWN");
+      bleGamepad.press(BUTTON_6);
+    }else{
+      bleGamepad.release(BUTTON_6);
+    }
+    if(controllers.down(0, GameControllers::LEFT)){        
+      //Serial.println("LEFT");
+      bleGamepad.press(BUTTON_9);
+    }else{
+      bleGamepad.release(BUTTON_9);
+    }
+    if(controllers.down(0, GameControllers::RIGHT)){        
+      //Serial.println("RIGHT");
+      bleGamepad.press(BUTTON_10);
+    }else{
+      bleGamepad.release(BUTTON_10);
+    }
+
+    /*    
     if( controllers.down(0, GameControllers::UP) && controllers.down(0, GameControllers::RIGHT)){
       bleGamepad.setHat1(DPAD_UP_RIGHT);
     }else if( controllers.down(0, GameControllers::DOWN) && controllers.down(0, GameControllers::RIGHT)){
@@ -94,7 +121,8 @@ void loop()
       bleGamepad.setHat1(HAT_RIGHT);
     }else{
         bleGamepad.setHat1(HAT_CENTERED);
-    }    
+    }
+    */    
   }  
   delay(33);
 }
