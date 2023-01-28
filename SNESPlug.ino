@@ -3,27 +3,33 @@
 
 #include "GameControllers.h"
 
+// SNES PIN.
 const int LATCH_PIN = 16;
 const int CLOCK_PIN = 17;
 const int DATA_PIN_0 = 18;  
 
 GameControllers controllers;
+
 BleGamepad bleGamepad;
 
 void setup()
 {  
-  Serial.begin(115200);  
+  Serial.begin(115200);
+  
   controllers.init(LATCH_PIN, CLOCK_PIN);   
   controllers.setController(0, GameControllers::SNES, DATA_PIN_0);
-  Serial.println("Starting BLE work!");  
+
+  Serial.println("Starting BLE work!");
+  
   bleGamepad.begin();
 }
 
 void loop()
 {
+  //read all controllers at once
   controllers.poll(); 
+
   if (bleGamepad.isConnected()){
-    //bleGamepad.pressStart();                        
     if(controllers.down(0, GameControllers::START)){
       //Serial.println("Start");
       bleGamepad.press(BUTTON_12);
@@ -73,6 +79,8 @@ void loop()
       bleGamepad.release(BUTTON_8);
     }
 
+    /*
+    // 按鈕.
     if(controllers.down(0, GameControllers::UP)){        
       //Serial.println("UP");
       bleGamepad.press(BUTTON_3);
@@ -97,32 +105,29 @@ void loop()
     }else{
       bleGamepad.release(BUTTON_10);
     }
+    */
 
-    /*    
-    if( controllers.down(0, GameControllers::UP) && controllers.down(0, GameControllers::RIGHT)){
-      bleGamepad.setHat1(DPAD_UP_RIGHT);
+    // 數位搖桿.
+    if( controllers.down(0, GameControllers::UP) && controllers.down(0, GameControllers::RIGHT)){      
+      bleGamepad.setLeftThumb(32767, 0);
     }else if( controllers.down(0, GameControllers::DOWN) && controllers.down(0, GameControllers::RIGHT)){
-      bleGamepad.setHat1(DPAD_DOWN_RIGHT);
+      bleGamepad.setLeftThumb(32767, 32767);
     }else if( controllers.down(0, GameControllers::DOWN) && controllers.down(0, GameControllers::LEFT)){
-      bleGamepad.setHat1(DPAD_DOWN_LEFT);
+      bleGamepad.setLeftThumb(0, 32767);
     }else if( controllers.down(0, GameControllers::UP) && controllers.down(0, GameControllers::LEFT)){
-      bleGamepad.setHat1(DPAD_UP_LEFT);      
+      bleGamepad.setLeftThumb(0, 0);
     }else if(controllers.down(0,GameControllers::UP)){
-      //Serial.println("UP");
-      bleGamepad.setHat1(HAT_UP);
+      bleGamepad.setLeftThumb(16384, 0);
     }else if(controllers.down(0, GameControllers::DOWN)){
-      //Serial.println("DOWN");
-      bleGamepad.setHat1(HAT_DOWN);
+      bleGamepad.setLeftThumb(16384, 32767);
     }else if(controllers.down(0, GameControllers::LEFT)){
-      //Serial.println("LEFT");
-      bleGamepad.setHat1(HAT_LEFT);
+      bleGamepad.setLeftThumb(0, 16384);
     }else if(controllers.down(0, GameControllers::RIGHT)){
-      //Serial.println("RIGHT");
-      bleGamepad.setHat1(HAT_RIGHT);
-    }else{
-        bleGamepad.setHat1(HAT_CENTERED);
+      bleGamepad.setLeftThumb(32767, 16384);
+    }else{      
+      bleGamepad.setAxes(16384, 16384, 16384, 16384, 16384, 16384, 16384, 16384);    
     }
-    */    
   }  
+  
   delay(33);
 }
